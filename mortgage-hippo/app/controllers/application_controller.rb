@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
+  def landing_page
+    render :file => 'public/landing.html'
+  end
+
   def current_user
     # User.find_by(api_key: params[:api_key])
     # User.find_by(id: params[:id])

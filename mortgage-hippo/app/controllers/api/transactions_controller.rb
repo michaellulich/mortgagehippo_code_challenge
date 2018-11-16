@@ -24,15 +24,15 @@ class Api::TransactionsController < ApplicationController
       return
     end
 
+    if user && current_coin_count <= 4
+      UserMailer.low_coin(user, current_coin_count, current_total).deliver
+    end
   
     if @transaction.save
       render "show.json.jbuilder"
     else
       render json: {message: @transaction.errors.full_messages},
         status: :unprocessable_entity
-    end
-    if user && current_coin_count <= 4
-      UserMailer.low_coin(user, current_coin_count, current_total).deliver
     end
   end
 

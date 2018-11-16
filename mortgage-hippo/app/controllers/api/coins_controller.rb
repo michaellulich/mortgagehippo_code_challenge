@@ -1,5 +1,5 @@
 class Api::CoinsController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   def index
     @coins = Coin.all
@@ -10,7 +10,6 @@ class Api::CoinsController < ApplicationController
     @coin = Coin.new(
       value: params[:value],
       name: params[:name],
-      # user_id: current_user.id
       )
     if @coin.save
       render "show.json.jbuilder"

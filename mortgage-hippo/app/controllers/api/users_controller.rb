@@ -15,7 +15,6 @@ class Api::UsersController < ApplicationController
     admin: params[:admin]
   )
     if @user.save
-      # UserMailer.low_coin(@user).deliver
       render json: {message: 'User created successfully'}, status: :created
     else
       render json: {errors: @user.errors.full_messages}, status: :bad_request

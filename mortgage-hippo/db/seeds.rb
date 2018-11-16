@@ -9,8 +9,9 @@
 Coin.create(value: 0.01, name: "penny")
 Coin.create(value: 0.05, name: "nickel")
 Coin.create(value: 0.10, name: "dime")
+Coin.create(value: 0.25, name: "quarter")
 
 User.create(name: "Mike", email: "michael.lulich@gmail.com", password: "password", admin: true, api_key: "aaa")
-User.create(name: "George", email: "chicagomikecodes@gmail.com", password: "password", admin: true, api_key: "bbb")
+User.create(name: "George", email: "chicagomikecodes@gmail.com", password: "password", admin: false, api_key: "bbb")
+User.create(name: "Elliott", email: "elliott@email.com", password:"password", admin: false, api_key: "ccc")
 
-# Transaction.create(user_id: 1, coin_id: 1, withdrawl: false)
